@@ -1223,5 +1223,5 @@ app.get("/socialscience/quiz", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log(`listening on port ${process.env.PORT}`);
+  console.log("Listening on port 3000");
 });
