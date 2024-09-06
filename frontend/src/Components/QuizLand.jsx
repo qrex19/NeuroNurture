@@ -18,7 +18,7 @@ const QuizLand = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (category && difficulty) {
-      navigate(`/quiz/${category}/${difficulty}`);
+      navigate(`/${category}/${difficulty}/quiz`);
     } else {
       alert("Please select both category and difficulty.");
     }

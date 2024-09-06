@@ -8,7 +8,7 @@ const CategorySelect = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (category && difficulty) {
+    if (category) {
       navigate(`/${category}/quiz`);
     }
   };

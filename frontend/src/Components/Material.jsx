@@ -64,7 +64,7 @@ const Quizes = () => {
           </Box>
 
           {/* Account Circle Icon */}
-          <IconButton color="inherit">
+          <IconButton color="inherit" onClick={() => navigator("/profile")}>
             <AccountCircle sx={{ fontSize: 40 }} />
           </IconButton>
         </Toolbar>

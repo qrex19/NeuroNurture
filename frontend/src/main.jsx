@@ -41,10 +41,10 @@ root.render(
       <Route path="/" element={<Home />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/landing" element={<Landing />} />
-      <Route path="/quizes" element={<Quiz />} />
+      <Route path="/:category/:difficulty/quiz/" element={<Quiz />} />
       <Route path="/material" element={<Material />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/category-select" element={<Catagory />} />
+      <Route path="/category" element={<Catagory />} />
       <Route path="/quiz" element={<QuizLand />} />
     </Routes>
   </Router>

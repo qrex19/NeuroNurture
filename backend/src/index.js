@@ -728,7 +728,7 @@ app.get("/english/quiz", (req, res) => {
   });
 });
 
-app.get("/socialscience/quiz", (req, res) => {
+app.get("/social-studies/quiz", (req, res) => {
   res.json({
     easy: [
       {
