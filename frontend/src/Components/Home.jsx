@@ -6,17 +6,14 @@ import {
   IconButton,
   Box,
   Container,
-  Card,
-  CardContent,
-  Grid,
   Divider,
 } from "@mui/material";
 import { AccountCircle } from "@mui/icons-material";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./Home.css"; // Ensure this file exists and is linked correctly
-import logo from "./logo.jpg"; // Ensure this image exists
+import "./Home.css";
+import logo from "./logo.jpg";
 import { useNavigate } from "react-router-dom";
 
 const testimonials = [
@@ -47,6 +44,7 @@ const sliderSettings = {
 
 const Home = () => {
   const navigate = useNavigate();
+
   return (
     <div>
       <AppBar position="fixed" sx={{ backgroundColor: "#6F8FAF" }}>
@@ -71,7 +69,7 @@ const Home = () => {
               Material
             </Button>
             <Button color="inherit" onClick={() => navigate("/quiz")}>
-              Quizzes
+              Quiz
             </Button>
             <Box
               sx={{
@@ -92,6 +90,7 @@ const Home = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
+
       <Box
         sx={{
           display: "flex",
@@ -100,80 +99,38 @@ const Home = () => {
           mt: 10,
         }}
       >
-        <Box
-          sx={{
-            flexGrow: 1,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            py: 7,
-            textAlign: "center",
-          }}
-        >
-          <Container>
-            <Typography variant="h6" color="textSecondary" sx={{ mb: 10 }}>
-              Unlock Your Potential with Innovative Learning Solutions
-            </Typography>
-            <Box sx={{ mt: 4 }}>
-              <Grid container spacing={4} justifyContent="center">
-                {["Reading", "Focus", "Visual"].map((option) => (
-                  <Grid item xs={12} sm={4} key={option}>
-                    <Card
-                      variant="outlined"
-                      sx={{
-                        p: 2,
-                        borderRadius: "16px",
-                        cursor: "pointer",
-                        "&:hover": { boxShadow: 6 },
-                        height: 300,
-                      }}
-                    >
-                      <CardContent>
-                        <Typography variant="h5" component="div">
-                          {option}
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary">
-                          Explore our {option.toLowerCase()} tools and resources
-                          to enhance your learning experience.
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                ))}
-              </Grid>
-            </Box>
-            <Box sx={{ mt: 6 }}>
-              <Typography variant="h4" gutterBottom>
-                What Our Clients Say
-              </Typography>
-              <Slider {...sliderSettings}>
-                {testimonials.map((testimonial, index) => (
-                  <Box
-                    key={index}
-                    sx={{
-                      p: 3,
-                      textAlign: "center",
-                      border: "1px solid #ddd",
-                      borderRadius: "8px",
-                      backgroundColor: "#fff",
-                      boxShadow: 3,
-                      width: "100%",
-                      maxWidth: "100%",
-                      boxSizing: "border-box",
-                    }}
-                  >
-                    <Typography variant="body1" sx={{ mb: 2 }}>
-                      `${testimonial.text}`
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary">
-                      - {testimonial.author}
-                    </Typography>
-                  </Box>
-                ))}
-              </Slider>
-            </Box>
-          </Container>
-        </Box>
+        {/* Existing Content */}
+        <Container sx={{ mt: 4 }}>
+          <Typography variant="h4" gutterBottom>
+            What Our Clients Say
+          </Typography>
+          <Slider {...sliderSettings}>
+            {testimonials.map((testimonial, index) => (
+              <Box
+                key={index}
+                sx={{
+                  p: 3,
+                  textAlign: "center",
+                  border: "1px solid #ddd",
+                  borderRadius: "8px",
+                  backgroundColor: "#fff",
+                  boxShadow: 3,
+                  width: "100%",
+                  maxWidth: "100%",
+                  boxSizing: "border-box",
+                }}
+              >
+                <Typography variant="body1" sx={{ mb: 2 }}>
+                  {testimonial.text}
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  - {testimonial.author}
+                </Typography>
+              </Box>
+            ))}
+          </Slider>
+        </Container>
+
         <Box
           sx={{
             position: "fixed",

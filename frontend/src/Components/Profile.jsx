@@ -78,7 +78,6 @@ const Profile = () => {
         }}
       >
         <Grid container spacing={3}>
-          {/* Left Half: Line Graph */}
           <Grid item xs={11} md={6}>
             <Paper
               sx={{
